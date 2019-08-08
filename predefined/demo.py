@@ -35,10 +35,5 @@ def load_model(model_path, embedding_name = 'truediv'):
     mdl = TestModel(X, y, embedding)
     return sess, mdl
 
-def enroll():
-    pass
-
-def test():
-    pass
 
 

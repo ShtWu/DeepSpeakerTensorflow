@@ -230,7 +230,6 @@ class distance_eval():
             for path in paths:
                 id = [p for p in path.split('/') if p.startswith('id')][0]
                 val = self._get_emb(path, mdl, sess)
-
                 embedding_vectors.extend(val)
                 labels.extend([id for _ in range(len(val))])
             assert len(embedding_vectors) == len(labels)
@@ -239,7 +238,6 @@ class distance_eval():
     def get_records(self, mdl, sess):
         # enrollments: list length of n enroll segments length of 200ms
         enrollments, enroll_ids = self.get_space(mdl, sess, space='enroll')
-
         # predictions: list length of n predictions
         predictions, ground_truth = self.get_space(mdl, sess, space='test')
         records = {
