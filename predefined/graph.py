@@ -50,7 +50,6 @@ class crnn_graph():
                 embedding = tf.reduce_mean(rnn_output, axis = 1)
                 embedding = tf.layer.dense(embedding,
                                             self.hp['embedding_shape'],
-                                            activation = tf.tanh,
                                             kernel_initializer = tf.contrib.layers.xavier_initializer(),
                                             kernel_regularizer = tf.contrib.layers.l2_regularizer(scale = 0.1))
                 self.embedding = tf.nn.l2_normalize(embedding, axis = -1, name = 'embedding')
