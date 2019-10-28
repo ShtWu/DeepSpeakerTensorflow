@@ -1,4 +1,5 @@
-This is a speaker identification project. 
+# Speaker Verification
+This is a speaker verification project. 
 
 Data set is based on Voxceleb1 with over 10k uttrance.
 
@@ -28,4 +29,4 @@ Redefine function load data since duplicate load_data exists.
 
 	
 
-# SpeakerVerification
+
