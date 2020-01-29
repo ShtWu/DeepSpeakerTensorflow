@@ -1,11 +1,11 @@
 # Speaker Verification
 This is a speaker verification project. 
 
-Data set is based on Voxceleb1 with over 10k uttrance.
+Data set is based on Voxceleb1 with over 10k uttrances.
 
-Attention mechanism and triplet loss are applied in this project.
+Attention mechanism and triplet loss are applied.
 
-In predefined package, following functions are defined:
+In predefined folder, following functions are defined:
 
 data_pipeline: the module is created to transform origin .wav signals(which can be recorded also) into speaker features in the form of rolling windows.
 
