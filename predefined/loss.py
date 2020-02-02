@@ -78,7 +78,7 @@ def _get_triplet_mask(y):
 
 
 
-def restricted_triplet_loss(embeddings, y, margin_plus):
+def triplet_loss(embeddings, y, margin):
     '''
      find the hardest triplet pairs of each elements in embeddings
      distance based triplet loss
@@ -98,8 +98,8 @@ def restricted_triplet_loss(embeddings, y, margin_plus):
     a_n_dist = tf.expand_dims(pairwise_dist, 1)
     # margin_plus: the first term activated when d_ap >= m1, second term activated when d_an <= m2
 
-    beta_1, beta_2 = margin_plus
-    triplet_loss = tf.maximum(a_p_dist - beta_1, c.EPSILON) + tf.maximum(beta_2 - a_n_dist, c.EPSILON)
+
+    triplet_loss = tf.maximum(a_p_dist - a_n_dist + margin, c.EPSILON)
     # get positive and negative matrix, return a mask if Y[a] = Y[b], M[a,b] = 1, else 0
     mask = _get_triplet_mask(y)
     mask = tf.maximum(tf.to_float(mask), c.EPSILON)
