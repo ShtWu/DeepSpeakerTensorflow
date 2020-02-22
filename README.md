@@ -16,16 +16,7 @@ trainer: this module contains functions to train, predict, finetune, save, load 
 	 Fed with tensors, dataframe. 
 
 
-train: python control module to run the whole thing.
-	1. load and prepare data first
-	2. setup the models by assign a model class to a variable
-	3. pass the returned variables into a trainer to conduct training operations.
-	4. if early stopping is triggered by the trainer, stop, load best model, lower the lr and fine tune.
-	5. repeat 4 until the model gets converged.
 
-to do:
-
-Redefine function load data since duplicate load_data exists.
 
 	
 
